@@ -5,7 +5,7 @@ var mainCtrl = (function(){
 			read: {
 				url: "http://www.devonosh.lsc/WebAdminFinal/DevonsLibrary/data/data.php",
 				type: "post",
-				dataType: "jsdon"
+				dataType: "json"
 			}
 		}
 	});
