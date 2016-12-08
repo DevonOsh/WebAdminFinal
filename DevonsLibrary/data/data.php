@@ -8,12 +8,12 @@
     if(!$db)
         die("Can't open the database");
     //fetch table rows from mysql db
-    $sql = "select * from lend_lib";
+    $sql = "select * from book";
     $result = mysql_query($sql);
 
     //create an array
     $libArray = array();
-    while($row =mysqli_fetch_assoc($result))
+    while($row =mysql_fetch_assoc($result))
     {
         $libArray[] = $row;
     }
