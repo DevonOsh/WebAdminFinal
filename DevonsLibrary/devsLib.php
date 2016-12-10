@@ -16,17 +16,15 @@
 	<head>
 		<title>Devon's Library</title>
 
-		<!--Styles-->
-		<link rel="stylesheet" href="styles/bootstrap.min.css" type="text/css" />
+		<link rel='stylesheet' href='styles/bootstrap.min.css' type='text/css' />
 
-		<!--Scripts-->
 		<script src="js/jquery.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/main.js"></script>
 	</head>
 	<body>
 
-	<div class="jumbotron">
+	<div class='jumbotron'>
 		<div class="container">
 			<h1>Devon's Library</h1>
 			<div class="col-sm-6">
@@ -38,24 +36,19 @@
 	<div class="container">
 		<div class="col-sm-10 offset-sm-2" id="listCol">
 			<div class="row">
-				<?php while($result = mysql_fetch_array($ResultSet, MYSQL_ASSOC))	
+				<?php while($result = mysql_fetch_array($ResultSet, MYSQL_ASSOC))
 					{
-					echo "<div class='col-xs-3'>
-						<img width='90' height='100' src=".$result["imageURL"].">
-					</div>
-					<div class='col-xs-9'>
-						
-						
-						 <span class='title'>".$result["title"]."</span><br />
-						<span class='author'>".$result["authorFName"]."</span>
-						
-						
-					</div>"
+					echo "<div class='col-xs-3'>"
+					echo	" <img width='90' height='100' src=".$result["imageURL"].">"
+					echo "</div>"
+					echo "<div class='col-xs-9'>"
+					echo " <span class='title'>".$result["title"]."</span><br />"
+					echo " <span class='author'>".$result["authorFName"]."</span>"
+					echo "</div>"
 					}
 				?>
 			</div>
 		</div>
 	</div>
-		
 	</body>
 </html>
