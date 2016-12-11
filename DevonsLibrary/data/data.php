@@ -11,14 +11,14 @@
     $sql = "select * from book";
     $result = mysql_query($sql);
 
-    //create an array
-    $libArray = array();
-    while($row =mysql_fetch_assoc($result))
-    {
-        $libArray[] = $row;
-    }
-    echo json_encode($libArray);
-
-    //close the db connection
-    mysqli_close($connection);
+    <?php while($result = mysql_fetch_array($ResultSet, MYSQL_ASSOC))
+        {
+        echo "<tr>";
+        echo "<td>".$rs["ssn"]."</td>";
+        echo "<td>".$rs["firstname"]."</td>";
+        echo "<td>".$rs["lastname"]."</td>";
+        echo "<td>".$rs["salary"]."</td>";
+        echo "</tr>"; }
+        echo "</table>";
+    ?>
 ?>
