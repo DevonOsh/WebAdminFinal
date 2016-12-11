@@ -10,10 +10,8 @@ $ResultSet = mysql_query("select * from book"); ?>
 	<head>
 		<title>Devon's Library</title>
 
-		<!--Styles-->
-		<link rel="stylesheet" href="styles/bootstrap.min.css" type="text/css" />
+		<link rel='stylesheet' href='styles/bootstrap.min.css' type='text/css' />
 
-		<!--Scripts-->
 		<script src="js/jquery.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/main.js"></script>
@@ -27,7 +25,7 @@ $ResultSet = mysql_query("select * from book"); ?>
 	</head>
 	<body>
 
-	<div class="jumbotron">
+	<div class='jumbotron'>
 		<div class="container">
 			<h1>Devon's Library</h1>
 			<div class="col-sm-6">
@@ -39,7 +37,6 @@ $ResultSet = mysql_query("select * from book"); ?>
 
 	<div class="container">
 		<div class="col-sm-10 offset-sm-2" id="listCol">
-
 		<?php
 		while($rs = mysql_fetch_array($ResultSet, MYSQL_ASSOC))
 		{
@@ -56,6 +53,5 @@ $ResultSet = mysql_query("select * from book"); ?>
 		?>
 		</div>
 	</div>
-		
 	</body>
 </html>
