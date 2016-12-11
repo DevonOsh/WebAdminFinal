@@ -3,7 +3,8 @@ if(!$conn)
 die("Can't Connect"); $db = mysql_select_db("lend_lib");
 if(!$db)
 die("Can't open database");
-$ResultSet = mysql_query("select * from book"); 
+$sql = "select * from book where title = ' " .htmlspecialchars($_GET['searchInput'])."'";
+$ResultSet = mysql_query($sql); 
 ?>
 <html>
 <head>
@@ -12,18 +13,13 @@ $ResultSet = mysql_query("select * from book");
 <body>
 	<div class='jumbotron'>
 		<div class="container">
-			<h1>Devon's Library</h1>
-			<form action = "search.php" method="get">
-			<div class="col-sm-6">
-			<input id="searchInput" name="searchInput" class="form-control" type="text" />
-			</div>
-			<button type="submit" id="searchBtn" class="btn btn-default">Search</button>
-			</form>
+			<h1>Search Results</h1>
+			<button id="backBtn" class="btn btn-default">Back</button>
 		</div>
 	</div>
 <div class="container">
 <div class="col-sm-10 offset-sm-2" id="listCol">
-<?php echo "<p>Here is Devon's Library</p>"; 
+<?php 
 while($rs = mysql_fetch_array($ResultSet, MYSQL_ASSOC))
 {
 echo	"<div class='row'>";

@@ -13,10 +13,12 @@ $ResultSet = mysql_query("select * from book");
 	<div class='jumbotron'>
 		<div class="container">
 			<h1>Devon's Library</h1>
+			<form action = "search.php" method="get">
 			<div class="col-sm-6">
-			<input id="searchInput" class="form-control" type="text" />
+			<input id="searchInput" name="searchInput" class="form-control" type="text" />
 			</div>
-			<button id="searchBtn" class="btn btn-default">Search</button>
+			<button type="submit" id="searchBtn" class="btn btn-default">Search</button>
+			</form>
 		</div>
 	</div>
 <div class="container">
@@ -26,10 +28,9 @@ while($rs = mysql_fetch_array($ResultSet, MYSQL_ASSOC))
 {
 echo	"<div class='row'>";
 echo		"<div class='col-xs-3'>";
-echo			"<img width='90' height='100' src='https://68.media.tumblr.com/avatar_ef515c5bca68_128.png'>";
+echo			"<img width='90' height='100' src='".$rs["imageURL"]."'>";
 echo		"</div>";
 echo "<div class='col-xs-9'>";
-echo "<span class='title'>".$rs["isbn"]."</span><br />";
 echo "<span>".$rs["title"]."</span><br />";
 echo "<span>".$rs["authorLName"]."</span><br />";
 echo "<span>".$rs["authorFName"]."</span></br />";
