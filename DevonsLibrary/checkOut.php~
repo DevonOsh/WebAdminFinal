@@ -1,0 +1,22 @@
+<?php
+$conn= mysql_connect("localhost","root","P@ssw0rd");
+if(!conn)
+		die("Can't Connect");
+$db = mysql_select_db("hr");
+if(!db)
+		die("Can't open database");
+$sql= "update employee set salary = "
+. htmlspecialchars($_GET['salary']) 
+. " where ssn = '" 
+. htmlspecialchars($_GET['ssn']) . "'";
+$Ret = mysql_query($sql);
+if (!Ret) {die(mysql_error());}
+?>
+<html><body>
+<?php
+echo "inserted" . "<BR>";
+echo $sql       . "<BR>";
+$RetStr = ($Ret) ? 'true':'false';
+echo $RetStr    . "<BR>";
+?>
+</body></html>

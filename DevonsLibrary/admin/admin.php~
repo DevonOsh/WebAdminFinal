@@ -41,6 +41,7 @@ $ResultSet = mysql_query("select * from book");
 					</div>
 					<div class="col-xs-6">
 						<input name="deleteInput" placeholder="Title of book to delete" class="form-control" type="text" />	
+					</div>
 				</div>
 				<div class="row">
 					<div class="col-xs-3">

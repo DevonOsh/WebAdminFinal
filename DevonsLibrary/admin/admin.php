@@ -34,7 +34,7 @@ $ResultSet = mysql_query("select * from book");
 				</div>
 			</div>
 			</form>
-			<form action="deleteBook.php">
+			<form action="delete.php">
 				<div class="row">
 					<div class="col-xs-6">
 					<h2>Delete Book</h2>

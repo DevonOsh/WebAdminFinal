@@ -22,22 +22,37 @@ $ResultSet = mysql_query("select * from book");
 		</div>
 	</div>
 <div class="container">
-<div class="col-sm-10 offset-sm-2" id="listCol">
-<?php echo "<p>Here is Devon's Library</p>"; 
-while($rs = mysql_fetch_array($ResultSet, MYSQL_ASSOC))
-{
-echo	"<div class='row'>";
-echo		"<div class='col-xs-3'>";
-echo			"<img width='90' height='100' src='".$rs["imageURL"]."'>";
-echo		"</div>";
-echo "<div class='col-xs-9'>";
-echo "<span>".$rs["title"]."</span><br />";
-echo "<span>".$rs["authorLName"]."</span><br />";
-echo "<span>".$rs["authorFName"]."</span></br />";
-echo "</div>";
-echo	"</div>";
-}
-?>
+<div class="row">
+	<div class="col-sm-10 offset-sm-2" id="listCol">
+	<?php echo "<h2>Devon's Library Inventory</h2>"; 
+	while($rs = mysql_fetch_array($ResultSet, MYSQL_ASSOC))
+	{
+	echo	"<div class='row'>";
+	echo		"<div class='col-xs-3'>";
+	echo			"<img width='90' height='100' src='".$rs["imageURL"]."'>";
+	echo		"</div>";
+	echo "<div class='col-xs-9'>";
+	echo "<span>".$rs["title"]."</span><br />";
+	echo "<span>".$rs["authorLName"]."</span><br />";
+	echo "<span>".$rs["authorFName"]."</span></br />";
+	if($rs["checkedOut"] == true) {
+		echo "<span class='glyhpicon glyphicon-remove-sign'> Currently Checked out</span>";
+	}
+	echo "</div>";
+	echo	"</div>";
+	}
+	?>
+	<div>
+</div>
+<div class="row">
+	<div class="col-sm-10">
+		<form action="checkOut.php">
+		<h3>Check Out Books</h3><br />
+		<h4>Please enter the title of the book you wish to check out</h5>
+		<input name="checkOutInput" placeholder="Title" class="form-control" type="text" />
+		<button type="submit" class="btn btn-default">Checkout</button>
+		</form>
+	</div>
 </div>
 </div>
 </body></html>
